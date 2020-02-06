@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
-import track from './track'
+import bookReducer from './book-reducer'
 
-export default combineReducers({
-    track
-})
+export default combineReducers(
+    { books: bookReducer }
+)
