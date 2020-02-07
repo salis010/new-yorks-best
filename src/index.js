@@ -1,8 +1,10 @@
 /////////////////////////////////////////////////////
 // NEXT
-// In Menu, the fetch needs to dispatch to Store. Create an index.js and do it
-
-
+// Load data with useEffect
+// Make mobile responsive in book.js
+// Add ranking arrows comparing to last week
+// inlcude test for pruneData
+// make an HR separator that stops short from the side edges
 
 
 import React from 'react'
@@ -11,10 +13,9 @@ import { Provider } from 'react-redux'
 import configureStore from './stores/configure-store'
 import * as actions  from './actions'
 import { Books } from './components/books/index'
-import { Menu } from './components/menu'
+import { Menu } from './components/menu/index'
 
 const store = configureStore()
-console.log('Index:', store)
 
 const mountNode = document.getElementById('mountNode')
 

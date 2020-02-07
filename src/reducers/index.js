@@ -1,6 +1,11 @@
 import { combineReducers } from 'redux'
-import bookReducer from './book-reducer'
+import { uiReducer }from './ui-reducer'
+import { bookReducer }from './book-reducer'
 
-export default combineReducers(
-    { books: bookReducer }
+
+export default combineReducers(    
+    { 
+        ui: uiReducer,
+        books: bookReducer,
+    }
 )
