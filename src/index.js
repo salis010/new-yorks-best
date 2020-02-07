@@ -1,6 +1,5 @@
 /////////////////////////////////////////////////////
 // NEXT
-// Load data with useEffect
 // Make mobile responsive in book.js
 // Add ranking arrows comparing to last week
 // inlcude test for pruneData

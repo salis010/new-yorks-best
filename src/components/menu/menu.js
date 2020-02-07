@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from '@emotion/styled'
 import { pruneData } from '../../utils/prune-data'
 
@@ -29,7 +29,7 @@ const MenuItem = styled.div`
 export const Menu = ({ setBooks }) => {
     
     const getData = () => {
-        const url = 'https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=93RP8JSIdmcLgOM3A2xhU1ntMgkOMlLX'
+        const url = 'https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=93RP8JSIdmcLgOM3A2xhU1ntMgkOMlLX'        
         
         fetch(url)
         .then(res => res.json())
@@ -38,6 +38,9 @@ export const Menu = ({ setBooks }) => {
         .then(data => setBooks(data))  
         //.then(data => console.log(data))  
     }
+
+    useEffect(() => getData())
+    
     
     return (
         <Nav>
