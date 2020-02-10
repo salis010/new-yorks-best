@@ -1,6 +1,5 @@
 /////////////////////////////////////////////////////
 // NEXT
-// Make mobile responsive in book.js
 // Add ranking arrows comparing to last week
 // inlcude test for pruneData
 // make an HR separator that stops short from the side edges

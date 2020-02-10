@@ -7,21 +7,39 @@ const buttonColorHover = 'RGB(125, 125, 180)'
 const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
-    padding-left: 4rem;
-    padding-bottom: 4rem;
-    border-bottom: 1px solid grey
+    margin: 0 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid grey;
+
+    @media only screen and (min-width: 600px) {
+        padding-left: 4rem;
+        padding-bottom: 4rem;
+    }
 `
 
 const H2 = styled.h2`
     font-family: 'times new roman';
-    font-size: 3rem;
+    font-size: 2rem;
     margin-bottom: 1rem;
     color: RGB(50, 50, 50);
+
+    @media only screen and (min-width: 600px) {
+        font-size: 3rem;
+    }
 `
 const Author = styled.p`
     font-size: 1.8rem;
     margin-top: 0;
     color: RGB(150, 150, 150);
+`
+
+const ImageAndRankWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+
+    @media only screen and (min-width: 600px) {
+        flex-direction: row;
+    }
 `
 
 const ImageWrapper = styled.div`
@@ -33,12 +51,29 @@ const RankWrapper =styled.div`
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    padding-left: 6rem;
+    margin-top: 1rem;
+
+    @media only screen and (min-width: 600px) {
+        margin-top: 0;
+        padding-left: 6rem;
+    }
 `
 
 const Img = styled.img`
-    max-width: 15rem;
+    width: 100%;
     object-fit: cover;
+
+    @media only screen and (min-width: 600px) {
+        min-width: 20rem;
+    }
+`
+
+const RankP = styled.p`
+    margin: 0;
+
+    @media only screen and (min-width: 600px) {
+        margin: 1rem 0;
+    }
 `
 
 const Rank = styled.span`
@@ -61,8 +96,9 @@ const Isbn = styled.span`
 `
 
 const Button = styled.button`
-    max-width: 15rem;
+    min-width: 90%;
     height: 3.6rem;
+    margin: auto;
     margin-bottom: 2rem;
     font-size: 1.4rem;
     color: RGB(250, 250, 250);
@@ -75,6 +111,13 @@ const Button = styled.button`
     &:hover {
         background-color: ${buttonColor};
     } 
+
+
+    @media only screen and (min-width: 600px) {
+        width: 20rem;
+        min-width: 20rem;
+        margin: 0 0 2rem 0;
+    }
 `
 
 export const Book = ({ book }) => {
@@ -83,14 +126,16 @@ export const Book = ({ book }) => {
         <Wrapper>
             <H2>{book.title}</H2>
             <Author>{book.author}</Author>
-            <ImageWrapper>
-                <Img src={book.book_image} alt={book.title} />
+            <ImageAndRankWrapper>
+                <ImageWrapper>
+                    <Img src={book.book_image} alt={book.title} />
+                </ImageWrapper>
                 <RankWrapper>
-                    <p>Rank: <Rank>{book.rank}</Rank></p>
-                    <p>Rank last week: <Rank>{book.rank_last_week}</Rank></p>
-                    <p>No. of weeks in top list: <Rank>{book.weeks_on_list}</Rank></p>
+                    <RankP>Rank: <Rank>{book.rank}</Rank></RankP>
+                    <RankP>Rank last week: <Rank>{book.rank_last_week}</Rank></RankP>
+                    <RankP>No. of weeks in top list: <Rank>{book.weeks_on_list}</Rank></RankP>
                 </RankWrapper>
-            </ImageWrapper>   
+            </ImageAndRankWrapper>   
             <MidP>{book.description}</MidP>
             <Button onClick={() => window.open(book.book_review_link)}>Read Review</Button>
             <Button onClick={() => window.open(book.amazon_product_url)}>Purchase from Amazon</Button>
