@@ -137,8 +137,8 @@ export const Book = ({ book }) => {
                 </RankWrapper>
             </ImageAndRankWrapper>   
             <MidP>{book.description}</MidP>
-            <Button onClick={() => window.open(book.book_review_link)}>Read Review</Button>
-            <Button onClick={() => window.open(book.amazon_product_url)}>Purchase from Amazon</Button>
+            {book.book_review_link && <Button onClick={() => window.open(book.book_review_link)}>Read Review</Button>}
+            {book.amazon_product_url && <Button onClick={() => window.open(book.amazon_product_url)}>Purchase from Amazon</Button>}
             <SmallP>Publisher: {book.publisher}</SmallP>
             <SmallP>ISBN10: <Isbn>{book.primary_isbn10}</Isbn></SmallP>
             <SmallP>ISBN13: <Isbn>{book.primary_isbn13}</Isbn></SmallP>
