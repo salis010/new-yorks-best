@@ -1,0 +1,2 @@
+'Read Review' and 'Buy from Amazon' buttons are displayed only if the respective links are available from the API
+Up/Down arrows appear next to the rank, depending on whether the ranking is better or worse than the previous week

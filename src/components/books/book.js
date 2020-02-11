@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
+import { getImgSrc } from '../../utils/get-image-src'
 
 const buttonColor = 'RGB(150, 150, 205)'
 const buttonColorHover = 'RGB(125, 125, 180)'
@@ -59,6 +60,13 @@ const RankWrapper =styled.div`
     }
 `
 
+const Ranking = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 8rem;
+`
+
 const Img = styled.img`
     width: 100%;
     object-fit: cover;
@@ -74,6 +82,11 @@ const RankP = styled.p`
     @media only screen and (min-width: 600px) {
         margin: 1rem 0;
     }
+`
+
+const ArrowImg = styled.img`
+    width: 2rem;
+    height: 2rem;
 `
 
 const Rank = styled.span`
@@ -122,6 +135,8 @@ const Button = styled.button`
 
 export const Book = ({ book }) => {
     
+    const imgSrc = getImgSrc(book.rank, book.rank_last_week)
+
     return (
         <Wrapper>
             <H2>{book.title}</H2>
@@ -131,7 +146,10 @@ export const Book = ({ book }) => {
                     <Img src={book.book_image} alt={book.title} />
                 </ImageWrapper>
                 <RankWrapper>
-                    <RankP>Rank: <Rank>{book.rank}</Rank></RankP>
+                    <Ranking>
+                        <RankP>Rank: <Rank>{book.rank}</Rank></RankP>
+                        {imgSrc && <ArrowImg src={'src/images/' + imgSrc} alt='up' />}
+                    </Ranking>
                     <RankP>Rank last week: <Rank>{book.rank_last_week}</Rank></RankP>
                     <RankP>No. of weeks in top list: <Rank>{book.weeks_on_list}</Rank></RankP>
                 </RankWrapper>

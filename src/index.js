@@ -1,16 +1,16 @@
 /////////////////////////////////////////////////////
 // NEXT
-// Publish to heroku
-// Add ranking arrows comparing to last week
-// inlcude test for pruneData
+// include loading page
+// inlcude test for pruneData and getImgSrc
 // make an HR separator that stops short from the side edges
+// import movies too
+// Publish to heroku
 
 
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import configureStore from './stores/configure-store'
-import * as actions  from './actions'
 import { Books } from './components/books/index'
 import { Menu } from './components/menu/index'
 
