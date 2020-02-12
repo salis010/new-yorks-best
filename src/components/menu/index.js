@@ -1,11 +1,14 @@
 import { connect } from 'react-redux'
 import { Menu as Component } from './menu'
-import { setBooks } from '../../actions/index'
+import { setBooks, setLoading } from '../../actions/index'
 
 
 const mapDispatchToProps = dispatch => (
     {
-        setBooks: data => dispatch(setBooks(data))
+        setBooks: data => {
+            dispatch(setBooks(data)) 
+            dispatch(setLoading(false))
+        }
     }
 )
 

@@ -1,6 +1,6 @@
 /////////////////////////////////////////////////////
 // NEXT
-// include loading page
+// beautify loading page
 // inlcude test for pruneData and getImgSrc
 // make an HR separator that stops short from the side edges
 // import movies too
@@ -11,8 +11,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import configureStore from './stores/configure-store'
-import { Books } from './components/books/index'
-import { Menu } from './components/menu/index'
+import { App } from './components/app/index'
 
 const store = configureStore()
 
@@ -20,7 +19,6 @@ const mountNode = document.getElementById('mountNode')
 
 ReactDOM.render(
     <Provider store={store} >
-        <Menu />
-        <Books />
+        <App />        
     </Provider>, 
     mountNode)

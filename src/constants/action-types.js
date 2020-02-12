@@ -1,2 +1,3 @@
-export const UPDATE_BOOKS = 'UPDATE_BOOKS' // redundant
 export const BOOKS_SET = 'BOOKS_SET'
+export const LOADING_STOPPED = 'LOADING_STOPPED'
+export const LOADING_STARTED = 'LOADING_STARTED'

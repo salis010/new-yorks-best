@@ -1,5 +1,4 @@
 export const getImgSrc = (rank, rank_last_week) => {
-    console.log(rank - rank_last_week)
     if(rank - rank_last_week === 0) {
         return false
     } else if(rank_last_week === 0) {
