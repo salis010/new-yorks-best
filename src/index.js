@@ -1,6 +1,5 @@
 /////////////////////////////////////////////////////
 // NEXT
-// beautify loading page
 // inlcude test for pruneData and getImgSrc
 // make an HR separator that stops short from the side edges
 // import movies too
