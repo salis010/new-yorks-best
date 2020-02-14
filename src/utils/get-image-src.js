@@ -5,7 +5,9 @@ export const getImgSrc = (rank, rank_last_week) => {
         return 'arrow-up.png'
     } else if (rank < rank_last_week) {
         return 'arrow-up.png'
-    } else {
+    } else if (rank > rank_last_week) {
         return 'arrow-down.png'
+    } else {
+        return false
     }
 }

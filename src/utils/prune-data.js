@@ -38,6 +38,6 @@ export const pruneData = data => {
         })
         books.push(prop)
     })
-
+    
     return books
 }
