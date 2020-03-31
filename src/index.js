@@ -1,6 +1,6 @@
 /////////////////////////////////////////////////////
 // NEXT
-// make an HR separator that stops short from the side edges
+// add New York Times logo
 // import movies too
 // Publish to heroku
 
